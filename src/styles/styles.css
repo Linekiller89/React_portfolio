@@ -1,0 +1,106 @@
+/* Body 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header 스타일 */
+.header {
+  background: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Footer 스타일 */
+.footer ul li {
+  list-style: none;
+}
+
+/* Project Slider 스타일 */
+
+.project-slider {
+  overflow: visible; /* 슬라이더 내부에서 넘친 부분을 보이게 설정 */
+  display: flex;
+  cursor: grab;
+  position: relative; /* z-index를 적용하기 위해 position 설정 */
+}
+
+.project-card {
+  min-width: 300px;
+  margin-right: 10px;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  position: relative; /* z-index 적용을 위한 relative 설정 */
+}
+
+.project-card:first-child {
+  margin-left: 10px; /* 첫 번째 카드에만 왼쪽 여백 적용 */
+}
+
+.project-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out; /* 스케일 애니메이션 추가 */
+}
+
+.project-card:hover img {
+  transform: scale(1.2); /* 이미지 확대 */
+}
+
+.project-info {
+  margin-top: 15px;
+}
+
+.project-info h2 {
+  margin: 0 0 10px 0;
+}
+
+.project-info a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* 작은 화면에서의 반응형 처리 */
+@media (max-width: 768px) {
+  .header {
+    border: 1px solid red;
+    background: #333;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .project-slider {
+    border: 1px solid red;
+    flex-direction: column;
+    overflow-x: auto;
+  }
+
+  .project-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  #root {
+    padding: 1rem;
+  }
+}
