@@ -1,58 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Projects.css"; // 스타일 파일 경로는 styles 폴더에서 임포트
 
 function Projects() {
   const projectList = [
     {
       id: 1,
-      yearRange: "2021 - 2024",
-      name: "Bitrefill",
-      description:
-        "Led design & development of Bitrefills design system as well as focusing on core flows like discovery, search and navigation.",
-      caseStudy: "/case-study/bitrefill",
-      imageUrl: "/images/bitrefill.jpg",
+      name: "테슬라 클론코딩",
+      description: "테슬라 메인페이지 클론코딩",
+      imageUrl: "/images/tesla-clone.jpg",
     },
     {
       id: 2,
-      yearRange: "2016 - 2021",
-      name: "Tracklib",
-      description:
-        "At music startup Tracklib I worked across the whole website, notably creating animated landing pages, leading the design system & building interactive user interfaces.",
-      caseStudy: "/case-study/tracklib",
-      imageUrl: "/images/tracklib.jpg",
+      name: "Project B",
+      description: "Description of Project B",
+      imageUrl: "/images/project-b.jpg",
     },
     {
       id: 3,
-      yearRange: "2021 - Now",
-      name: "Trail Routes",
-      description:
-        "I build Trail Routes as a side project, where I share my favorite running & hiking trails for others to explore. Currently available on Web & iOS.",
-      caseStudy: "/case-study/trail-routes",
-      imageUrl: "/images/trailroutes.jpg",
+      name: "Project C",
+      description: "Description of Project C",
+      imageUrl: "/images/project-c.jpg",
+    },
+    {
+      id: 4,
+      name: "Project C",
+      description: "Description of Project C",
+      imageUrl: "/images/project-c.jpg",
     },
   ];
 
   return (
-    <div className="projects-container">
-      <h2 className="projects-header">Selected Projects</h2>
-      <div className="projects-list">
+    <div className="projects">
+      <h2>My Projects</h2>
+      <ul>
         {projectList.map((project) => (
-          <div key={project.id} className="project-item">
-            <div className="project-text">
-              <span className="project-year">{project.yearRange}</span>
-              <h3 className="project-name">{project.name}</h3>
-              <p className="project-description">{project.description}</p>
-              <Link to={project.caseStudy} className="case-study-link">
-                Read case study
-              </Link>
-            </div>
-            <div className="project-image">
-              <img src={project.imageUrl} alt={project.name} />
-            </div>
-          </div>
+          <li key={project.id}>
+            <Link to={`/pages/projects/${project.id}`}>
+              <h3>{project.name}</h3>
+              <p>{project.description}</p>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

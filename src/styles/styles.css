@@ -34,17 +34,17 @@ body {
 }
 
 /* Project Slider 스타일 */
-
 .project-slider {
-  overflow: visible; /* 슬라이더 내부에서 넘친 부분을 보이게 설정 */
   display: flex;
-  cursor: grab;
+  gap: 10px; /* 카드 간의 간격 */
   position: relative; /* z-index를 적용하기 위해 position 설정 */
+  height: 200px; /* 카드의 고정된 높이 */
+  overflow: hidden; /* 스크롤 방지 */
 }
 
 .project-card {
-  min-width: 300px;
-  margin-right: 10px;
+  min-width: 300px; /* 카드의 최소 너비 */
+  height: 200px; /* 카드의 고정된 높이 */
   background: #f4f4f4;
   padding: 20px;
   border-radius: 10px;
@@ -58,6 +58,7 @@ body {
 
 .project-card img {
   max-width: 100%;
+  max-height: 100%; /* 이미지가 카드 높이를 넘지 않도록 설정 */
   border-radius: 10px;
   transition: transform 0.3s ease-in-out; /* 스케일 애니메이션 추가 */
 }
@@ -80,27 +81,29 @@ body {
   font-weight: bold;
 }
 
-/* 작은 화면에서의 반응형 처리 */
+/* 반응형 처리 */
 @media (max-width: 768px) {
-  .header {
-    border: 1px solid red;
-    background: #333;
-    padding: 10px;
-    text-align: center;
-  }
-
   .project-slider {
-    border: 1px solid red;
-    flex-direction: column;
-    overflow-x: auto;
+    flex-wrap: wrap; /* 작은 화면에서는 여러 줄로 카드를 배치 */
+    justify-content: center;
+    height: auto; /* 카드 높이는 고정되지만, 여러 줄일 경우 높이를 자동으로 조정 */
   }
 
   .project-card {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 100%; /* 작은 화면에서 카드가 전체 너비를 차지 */
+    height: 150px; /* 카드 높이는 고정 */
+    margin-bottom: 20px; /* 카드 간의 간격 */
+  }
+}
+
+@media (min-width: 768px) {
+  .project-slider {
+    flex-wrap: nowrap; /* 큰 화면에서는 한 줄로만 카드를 배치 */
   }
 
-  #root {
-    padding: 1rem;
+  .project-slider::after {
+    content: "";
+    display: block;
+    min-width: 300px; /* 마지막 카드가 전부 보이도록 설정 */
   }
 }
