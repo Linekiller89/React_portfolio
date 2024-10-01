@@ -1,35 +1,31 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-const projectDetails = {
-  1: {
-    title: "Project One",
-    description: "Detailed info about project one",
-    imageUrl: "/images/project1.jpg",
-  },
-  2: {
-    title: "Project Two",
-    description: "Detailed info about project two",
-    imageUrl: "/images/project2.jpg",
-  },
-  3: {
-    title: "Project Three",
-    description: "Detailed info about project three",
-    imageUrl: "/images/project3.jpg",
-  },
-};
+function ProjectDetail() {
+  const { id } = useParams(); // URL의 id 파라미터를 가져옴
 
-const ProjectDetail = () => {
-  const { id } = useParams();
-  const project = projectDetails[id];
+  const projectList = [
+    {
+      id: 1,
+      name: "테슬라 클론코딩",
+      description: "테슬라 메인페이지 클론코딩",
+    },
+    { id: 2, name: "Project B", description: "Description of Project B" },
+    // 추가 프로젝트 목록
+  ];
+
+  const project = projectList.find((p) => p.id === parseInt(id));
+
+  if (!project) {
+    return <h2>Project not found</h2>;
+  }
 
   return (
     <div className="project-detail">
-      <h1>{project.title}</h1>
-      <img src={project.imageUrl} alt={project.title} />
+      <h2>{project.name}</h2>
       <p>{project.description}</p>
     </div>
   );
-};
+}
 
 export default ProjectDetail;

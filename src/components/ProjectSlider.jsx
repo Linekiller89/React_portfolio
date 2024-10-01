@@ -69,13 +69,9 @@ const ProjectSlider = () => {
         className="cards-container"
         drag={isMobile ? "y" : "x"} // 모바일에서 세로 드래그, 데스크탑에서 가로 드래그
         dragConstraints={{
-          left: isMobile
-            ? 0
-            : -(sliderRef.current?.scrollWidth - containerWidth), // 가로 드래그가 마지막 카드까지 가능하도록 수정
+          left: isMobile ? 0 : -(sliderRef.current?.scrollWidth - containerWidth), // 가로 드래그가 마지막 카드까지 가능하도록 수정
           right: 0,
-          top: isMobile
-            ? -(sliderRef.current?.scrollHeight - containerWidth)
-            : 0,
+          top: isMobile ? -(sliderRef.current?.scrollHeight - containerWidth) : 0,
           bottom: 0,
         }}
         style={{

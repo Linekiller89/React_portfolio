@@ -1,0 +1,74 @@
+.projects-container {
+  padding: 40px;
+  background-color: #111; /* 어두운 배경 */
+  color: #fff; /* 텍스트는 흰색 */
+}
+
+.projects-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* 프로젝트들 간의 간격 */
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 텍스트와 이미지 간격 */
+  border-bottom: 1px solid #333; /* 프로젝트 간 구분선 */
+  padding-bottom: 20px;
+}
+
+.project-year {
+  font-size: 1rem;
+  color: #888; /* 연도 범위는 밝은 회색 */
+  margin-bottom: 5px;
+}
+
+.project-name {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #fff; /* 프로젝트 제목 */
+}
+
+.project-description {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #ccc; /* 설명은 조금 더 밝은 회색 */
+}
+
+.case-study-link {
+  font-size: 1rem;
+  color: #4da6ff; /* 링크는 파란색 */
+  text-decoration: none;
+}
+
+.case-study-link:hover {
+  text-decoration: underline;
+}
+
+.project-image img {
+  width: 100%;
+  border-radius: 10px; /* 이미지에 둥근 모서리 추가 */
+  object-fit: cover; /* 이미지 비율을 유지하면서 꽉 채움 */
+}
+
+@media (min-width: 768px) {
+  .project-item {
+    flex-direction: row; /* 큰 화면에서는 가로로 나열 */
+    justify-content: space-between;
+  }
+
+  .project-text {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .project-image {
+    flex: 1;
+  }
+}

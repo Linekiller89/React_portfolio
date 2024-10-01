@@ -7,13 +7,13 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Home</Link> {/* 홈으로 이동 */}
           </li>
           <li>
-            <Link to="/projects">Projects</Link>
+            <Link to="/projects">Projects</Link> {/* Projects 페이지로 이동 */}
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact">Contact</Link> {/* Contact 페이지로 이동 */}
           </li>
         </ul>
       </nav>
