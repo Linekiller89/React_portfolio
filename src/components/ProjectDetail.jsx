@@ -1,18 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { projectList } from "../Pages/Projects";
 
 function ProjectDetail() {
   const { id } = useParams(); // URL의 id 파라미터를 가져옴
-
-  const projectList = [
-    {
-      id: 1,
-      name: "테슬라 클론코딩",
-      description: "테슬라 메인페이지 클론코딩",
-    },
-    { id: 2, name: "Project B", description: "Description of Project B" },
-    // 추가 프로젝트 목록
-  ];
 
   const project = projectList.find((p) => p.id === parseInt(id));
 

@@ -2,34 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion } from "framer-motion";
 
-const projects = [
-  {
-    id: 1,
-    title: "Project One",
-    description: "A React project",
-    imageUrl: "/images/project1.jpg",
-  },
-  {
-    id: 2,
-    title: "Project Two",
-    description: "A Vue project",
-    imageUrl: "/images/project2.jpg",
-  },
-  {
-    id: 3,
-    title: "Project Three",
-    description: "A Node.js project",
-    imageUrl: "/images/project3.jpg",
-  },
-  {
-    id: 4,
-    title: "Project Four",
-    description: "A Node.js project",
-    imageUrl: "/images/project3.jpg",
-  },
-];
-
-const ProjectSlider = () => {
+// 프로젝트 리스트를 받아서 슬라이더에 적용
+const ProjectSlider = ({ projects = [] }) => {
   const sliderRef = useRef();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [containerWidth, setContainerWidth] = useState(0);

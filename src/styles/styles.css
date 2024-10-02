@@ -97,7 +97,7 @@ body {
 
   .project-card {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 0 auto !important;
   }
 
   #root {

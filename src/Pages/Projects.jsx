@@ -2,37 +2,42 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Projects.css"; // 스타일 파일 경로는 styles 폴더에서 임포트
 
-function Projects() {
-  const projectList = [
-    {
-      id: 1,
-      yearRange: "2021 - 2024",
-      name: "Bitrefill",
-      description:
-        "Led design & development of Bitrefills design system as well as focusing on core flows like discovery, search and navigation.",
-      caseStudy: "/case-study/bitrefill",
-      imageUrl: "/images/bitrefill.jpg",
-    },
-    {
-      id: 2,
-      yearRange: "2016 - 2021",
-      name: "Tracklib",
-      description:
-        "At music startup Tracklib I worked across the whole website, notably creating animated landing pages, leading the design system & building interactive user interfaces.",
-      caseStudy: "/case-study/tracklib",
-      imageUrl: "/images/tracklib.jpg",
-    },
-    {
-      id: 3,
-      yearRange: "2021 - Now",
-      name: "Trail Routes",
-      description:
-        "I build Trail Routes as a side project, where I share my favorite running & hiking trails for others to explore. Currently available on Web & iOS.",
-      caseStudy: "/case-study/trail-routes",
-      imageUrl: "/images/trailroutes.jpg",
-    },
-  ];
+export const projectList = [
+  {
+    id: 1,
+    yearRange: "2021 - 2024",
+    name: "Bitrefill",
+    description: "Led design & development of Bitrefill...",
+    caseStudy: "/case-study/bitrefill",
+    imageUrl: "/images/bitrefill.jpg",
+  },
+  {
+    id: 2,
+    yearRange: "2016 - 2021",
+    name: "Tracklib",
+    description: "At music startup Tracklib I worked across...",
+    caseStudy: "/case-study/tracklib",
+    imageUrl: "/images/tracklib.jpg",
+  },
+  {
+    id: 3,
+    yearRange: "2021 - Now",
+    name: "Trail Routes",
+    description: "I build Trail Routes as a side project...",
+    caseStudy: "/case-study/trail-routes",
+    imageUrl: "/images/trailroutes.jpg",
+  },
+  {
+    id: 4,
+    yearRange: "asdsadasdasdasd",
+    name: "Trail adasdsadsadsadsadsad",
+    description: "I builasdsadasdsadsadasdsadsadsadsade project...",
+    caseStudy: "/case-study/trail-routes",
+    imageUrl: "/images/trailroutes.jpg",
+  },
+];
 
+function Projects() {
   return (
     <div className="projects-container">
       <h2 className="projects-header">Selected Projects</h2>
